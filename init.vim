@@ -1,18 +1,29 @@
+"Neo vim configuration 
 
-" neo vim configuration 
+"Syntax highlighting
+syntax on
 
+"configs
 
-" configs
-
-" show line numbers
+"Show line numbers
 set number
 
+"Set encoding to utf
+set encoding=utf-8
+
+"Type undo to undo all the changes you did to the file
+set undofile
 
 
+"Smart search and ignore search case
+set ignorecase
+set smartcase
+
+"Search while you are typing characters
+set incsearch
 
 
-
-" plugins
+"plugins
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
