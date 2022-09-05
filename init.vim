@@ -28,7 +28,6 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 
-
 call plug#begin()
 " The default plugin directory will be as follows:
 "   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
@@ -36,10 +35,17 @@ call plug#begin()
 " Type :PlugInstall to install plugins
 
 Plug 'itchyny/lightline.vim'
-
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
-
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'agude/vim-eldar'
+Plug 'joshdick/onedark.vim'
+Plug 'ayu-theme/ayu-vim' "
 call plug#end()
 
+set termguicolors     " enable true colors support
 
+set background=dark
 
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
