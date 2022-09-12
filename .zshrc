@@ -88,6 +88,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+unsetopt inc_append_history
+unsetopt share_history
+setopt no_share_history
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -124,12 +127,17 @@ export PATH=$PATH:$CLION_HOME:$IDEA_HOME:$RUBYMINE_HOME
 export PATH=$PATH:$GOLAND_HOME/bin
 export PATH=$PATH:$ULTRACOPIER_HOME
 export PATH=$PATH:$BREW_HOME
-
+export PATH="$HOME/.rbenv/bin:$PATH"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
+# ruby rbenv init
+eval "$(rbenv init - zsh)"
+
 
 # disable shared history between terminals
-unsetopt share_history
-setopt no_share_history
+#setopt no_share_history
+#unsetopt inc_append_history
+#unsetopt share_history
+#setopt no_share_history
