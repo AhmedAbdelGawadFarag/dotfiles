@@ -1,0 +1,14 @@
+" map leader to Space
+let mapleader = " "
+
+"if pattern contain lower case letter it's case insensitive
+"if uppercase letter it's case sensitive
+set ignorecase
+set smartcase
+
+"Search while you are typing characters
+set incsearch
+
+inoremap jj <Esc>
+set timeoutlen=1000
+
