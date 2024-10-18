@@ -34,15 +34,12 @@ Plug 'tpope/vim-commentary'
 inoremap jj <Esc>
 set timeoutlen=1000
 
-" rename variable in the function scobe
-nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
 
-" rename variable in the whole file
-nnoremap gR gD:%s/<C-R>///gc<left><left><left>
+" Map leader<p> to last yanked register
+map <leader>p "0p
 
-" delete current word into the black hole register
-xnoremap <leader>p \"_dp
-
+" Go to super method (interface declaration)
+map gs <Action>(GotoSuperMethod)
 
 
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
