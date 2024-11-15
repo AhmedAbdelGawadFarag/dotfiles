@@ -55,6 +55,8 @@ map gb <Action>(GotoImplementation)
 " Override the super methods
 map <leader>o <Action>(OverrideMethods)
 
+" Implement interface methods
+map <leader>i <Action>(ImplementMethods)
 
 " -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 
