@@ -55,7 +55,7 @@ map gb <Action>(GotoImplementation)
 " Override the super methods
 map <leader>o <Action>(OverrideMethods)
 
-" Implement interface methods
+" Implement super methods
 map <leader>i <Action>(ImplementMethods)
 
 " -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
@@ -65,6 +65,15 @@ map <leader>f <Action>(ReformatCode)
 
 " refactor name of the current element (variable,method,class).
 map <leader>r <Action>(RenameElement)
+
+" create a method from the selected code.
+map <leader>cm <Action>(ExtractMethod)
+
+" create a variable from the selected value.
+map <leader>cv <Action>(IntroduceVariable)
+
+" create a filed (class variable) from the selected value.
+map <leader>cf <Action>(IntroduceVariable)
 
 " Map <leader>d to start debug
 "map <leader>d <Action>(Debug)
