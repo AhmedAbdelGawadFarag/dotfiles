@@ -34,6 +34,14 @@ Plug 'tpope/vim-commentary'
 inoremap jj <Esc>
 set timeoutlen=1000
 
+" Map H to go to beginning of non white character of the line
+noremap H ^
+
+" Map L to go to end of non white character of the line
+noremap L $
+
+" Map S to replace the word under cursor with the last yanked/deleted word.
+nnoremap S "_diwP
 
 " Map leader<p> to last yanked register
 map <leader>p "0p
@@ -43,6 +51,10 @@ map gs <Action>(GotoSuperMethod)
 
 " Go from interface to method implementation
 map gb <Action>(GotoImplementation)
+
+" Override the super methods
+map <leader>o <Action>(OverrideMethods)
+
 
 " -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 
