@@ -1,9 +1,16 @@
-" .ideavimrc is a configuration file for IdeaVim plugin. It uses
-"   the same commands as the original .vimrc configuration.
-" You can find a list of commands here: https://jb.gg/h38q75
-" Find more examples here: https://jb.gg/share-ideavimrc
-" map leader to Space
+" map leader key to Space
 let mapleader = " "
+
+""" --- Plugins ---
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+" Nerd tree
+Plug 'preservim/nerdtree'
+" Surround words with " ,' ,( ,{ ,etc....
+Plug 'tpope/vim-surround
 
 
 "" -- Suggested options --
@@ -23,16 +30,9 @@ set incsearch
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
-" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
-
-" Highlight copied text
-Plug 'machakann/vim-highlightedyank'
-" Commentary plugin
-Plug 'tpope/vim-commentary'
-
 " Map ESC to Caps lock key
 inoremap jj <Esc>
-set timeoutlen=1000
+set timeoutlen=2000
 
 " Map H to go to beginning of non white character of the line
 noremap H ^
@@ -40,7 +40,7 @@ noremap H ^
 " Map L to go to end of non white character of the line
 noremap L $
 
-" Map S to replace the word under cursor with the last yanked/deleted word.
+" Map S to replace (substitute) the word under cursor with the last yanked/deleted word.
 nnoremap S "_diwP
 
 " Map leader<p> to last yanked register
@@ -61,22 +61,36 @@ map <leader>i <Action>(ImplementMethods)
 " -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 
 " Reformat code
-map <leader>f <Action>(ReformatCode)
+map <leader>rf <Action>(ReformatCode)
 
 " refactor name of the current element (variable,method,class).
-map <leader>r <Action>(RenameElement)
+map <leader>rr <Action>(RenameElement)
 
 " create a method from the selected code.
-map <leader>cm <Action>(ExtractMethod)
+map <leader>rm <Action>(ExtractMethod)
 
 " create a variable from the selected value.
-map <leader>cv <Action>(IntroduceVariable)
+map <leader>rv <Action>(IntroduceVariable)
 
 " create a filed (class variable) from the selected value.
-map <leader>cf <Action>(IntroduceVariable)
+map <leader>rf <Action>(IntroduceField)
 
-" Map <leader>d to start debug
-"map <leader>d <Action>(Debug)
+map <leader>t <Action>(ActivateTerminalToolWindow)
 
-" Map \b to toggle the breakpoint on the current line
-"map \b <Action>(ToggleLineBreakpoint)
+
+" Nerd tree shortcuts
+" m open menu bar on the tree selection.
+" n	Create File
+" N	Create Package
+" d	Delete file or directory
+" q close the tree window.
+" p traverse to the parent of the current selection.
+" CTRL+N find current file in the tree and set focus on the tree.
+noremap <C-n> :NERDTreeFind<cr>
+
+" Type s + <brackets> to surround current word (word under cursor) with the desired brackets.
+nmap s ysiw
+
+" Surround the selected words with brackets in visual mode.
+vmap s S
+
