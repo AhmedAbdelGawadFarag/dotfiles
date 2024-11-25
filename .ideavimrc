@@ -94,3 +94,5 @@ nmap s ysiw
 " Surround the selected words with brackets in visual mode.
 vmap s S
 
+" CTRL + L to go to next tab 
+nmap <C-l> <Action>(NextTab)
