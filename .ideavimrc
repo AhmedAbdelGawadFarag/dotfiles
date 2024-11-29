@@ -94,5 +94,14 @@ nmap s ysiw
 " Surround the selected words with brackets in visual mode.
 vmap s S
 
-" CTRL + L to go to next tab 
-nmap <C-l> <Action>(NextTab)
+" CTRL + l to go to next tab
+nmap <Tab> <Action>(NextTab)
+
+" CTRL + h to go to prev tab
+nmap <C-Tab> <Action>(PreviousTab)
+
+set clipboard=unnamedplus
+
+nmap <C-w>= <Action>(MaximizeEditorInSplit);
+
+nmap <C-w>- <Action>(MaximizeEditorInSplit);
