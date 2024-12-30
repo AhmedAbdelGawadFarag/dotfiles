@@ -23,6 +23,12 @@ Plug 'ayu-theme/ayu-vim' "
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
+Plug 'tpope/vim-fugitive'
+
+Plug 'lewis6991/gitsigns.nvim'
+
+Plug 'voldikss/vim-floaterm'
+
 call plug#end()
 
 
@@ -59,6 +65,9 @@ nnoremap S "_diwP
 " Map leader<p> to last yanked register
 map <leader>p "0p
 
+" open terminal with leader + t
+noremap <leader>t :vert term<cr>
+
 
 " Nerd tree shortcuts
 " m open menu bar on the tree selection.
@@ -73,11 +82,11 @@ noremap <C-n> :NERDTreeFind<cr>
 " Type s + <brackets> to surround current word (word under cursor) with the desired brackets.
 nmap s ysiw
 
-" CTRL + l to go to next buffer
-nmap <C-l> :bnext<cr> 
+" Tab to go to next buffer
+nmap <Tab> :bnext<cr> 
 
-" CTRL + h to go to previous buffer
-nmap <C-h> :bprev<cr> 
+" SHIFT + tab to go to previous buffer
+nmap <S-Tab> :bprev<cr> 
 
 " Surround the selected words with brackets in visual mode.
 vmap s S
@@ -104,6 +113,8 @@ colorscheme ayu
 " Search in the files history list
 nnoremap <C-e> :History<CR>
 
+:tnoremap jj <C-\><C-n>
+
 " Bufferline extension
 set termguicolors
 lua << EOF
@@ -112,3 +123,39 @@ EOF
 
 "Syntax highlighting
 syntax on
+
+set ma
+
+"ctrl + w + = to zoom current splitted window
+noremap <C-w>= <c-w>_ \| <c-w>\|
+
+" ctrl + w + - to zoom out current splitted window and make all window equal in size
+noremap <C-w>- <c-w>=
+
+" Make adjusing split sizes a bit more friendly
+noremap <silent> <C-Left> :vertical resize +3<CR>
+noremap <silent> <C-Right> :vertical resize -3<CR>
+noremap <silent> <C-Up> :resize +3<CR>
+noremap <silent> <C-Down> :resize -3<CR>
+
+" Quit current opened buffer 
+noremap  qw :bd<CR>
+
+
+" Going to next/prev wrapped lines with j/k
+map j gj
+map k gk
+
+" Open split on the right instead of default left vim behaviour
+set splitright
+
+" Open split on the below instead of default up vim behaviour
+set splitbelow
+
+lua << EOF
+require("gitsigns").setup{}
+EOF
+
+set history=1000
+
+set clipboard=unnamedplus
