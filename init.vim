@@ -29,6 +29,10 @@ Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'voldikss/vim-floaterm'
 
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
+Plug 'tpope/vim-commentary', {'branch': 'master'}
+
 call plug#end()
 
 
@@ -159,3 +163,20 @@ EOF
 set history=1000
 
 set clipboard=unnamedplus
+
+
+" alt-j to visual multi cursor with similar to (alt-j) in intelli
+" n/N to get next/previous occurrence
+" [ to select next/previous cursor
+" q to skip current and get next occurrence
+" Q to remove current cursor/selection
+
+let g:VM_maps = {}
+let g:VM_maps['Find Under']         = '<M-j>'
+let g:VM_maps['Find Subword Under'] = '<M-j>'
+
+set swapfile
+
+" map ctrl + / to comment code
+nmap <C-_> gcc
+vmap <C-_> gc
