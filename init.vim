@@ -14,6 +14,8 @@ Plug 'preservim/nerdtree'
 " Surround words with " ,' ,( ,{ ,etc....
 Plug 'tpope/vim-surround'
 
+Plug 'itchyny/lightline.vim'
+
 Plug 'nvim-tree/nvim-web-devicons' " Recommended (for coloured icons)
 " Plug 'ryanoasis/vim-devicons' " Icons without colours
 Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
@@ -32,6 +34,9 @@ Plug 'voldikss/vim-floaterm'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 Plug 'tpope/vim-commentary', {'branch': 'master'}
+
+" Plug 'vim-airline/vim-airline'
+
 
 call plug#end()
 
@@ -180,3 +185,18 @@ set swapfile
 " map ctrl + / to comment code
 nmap <C-_> gcc
 vmap <C-_> gc
+
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
+
+
+let g:lightline.enable = {'statusline': 1,'tabline': 0}
