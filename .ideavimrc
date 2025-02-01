@@ -10,7 +10,7 @@ Plug 'tpope/vim-commentary'
 " Nerd tree
 Plug 'preservim/nerdtree'
 " Surround words with " ,' ,( ,{ ,etc....
-Plug 'tpope/vim-surround
+Plug 'tpope/vim-surround'
 
 
 "" -- Suggested options --
@@ -112,3 +112,5 @@ nmap qw <Action>(CloseContent);
 " Disable Vim bell sound.
 set noerrorbells
 set visualbell
+
+set wrap
