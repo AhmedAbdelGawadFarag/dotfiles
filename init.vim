@@ -37,6 +37,11 @@ Plug 'tpope/vim-commentary', {'branch': 'master'}
 
 " Plug 'vim-airline/vim-airline'
 
+Plug 'rebelot/kanagawa.nvim'
+
+Plug 'wellle/targets.vim'
+
+Plug 'kshenoy/vim-signature'
 
 call plug#end()
 
@@ -116,8 +121,7 @@ set termguicolors     " enable true colors support
 
 set background=dark
 
-let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
+colorscheme kanagawa-wave
 
 " Search in the files history list
 nnoremap <C-e> :History<CR>
