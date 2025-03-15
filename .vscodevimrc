@@ -1,14 +1,71 @@
-" map leader to Space
+" map leader key to Space
 let mapleader = " "
 
-"if pattern contain lower case letter it's case insensitive
-"if uppercase letter it's case sensitive
+""" --- Plugins ---
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+" Nerd tree
+Plug 'preservim/nerdtree'
+" Surround words with " ,' ,( ,{ ,etc....
+Plug 'tpope/vim-surround'
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+
+" if pattern contain lower case letter it's case insensitive
+" if uppercase letter it's case sensitive
 set ignorecase
 set smartcase
 
-"Search while you are typing characters
+" Do incremental searching.
 set incsearch
 
-inoremap jj <Esc>
-set timeoutlen=1000
+" Don't use Ex mode, use Q for formatting.
+map Q gq
 
+" Map ESC to Caps lock key
+inoremap jj <Esc>
+set timeoutlen=2000
+
+" Map H to go to beginning of non white character of the line
+noremap H ^
+
+" Map L to go to end of non white character of the line
+noremap L $
+
+" Map S to replace (substitute) the word under cursor with the last yanked/deleted word.
+nnoremap S "_diwP
+
+" Map leader<p> to last yanked register
+map <leader>p "0p
+
+
+" Type s + <brackets> to surround current word (word under cursor) with the desired brackets.
+nmap s ysiw
+
+" Surround the selected words with brackets in visual mode.
+vmap s S
+
+" Tab to go to next buffer
+nmap <Tab> :bnext<cr> 
+
+" SHIFT + tab to go to previous buffer
+nmap <S-Tab> :bprev<cr> 
+
+set clipboard=unnamedplus
+
+noremap  qw :bd<CR>
+
+
+" Disable Vim bell sound.
+set noerrorbells
+set visualbell
+
+set wrap
