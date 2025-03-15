@@ -1,0 +1,21 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "vim.vimrc.enable": true,
+  "editor.fontSize": 18,
+  "editor.wordWrap": "off",
+  "vim.useSystemClipboard": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<C-w>",
+        "="
+      ],
+      "commands": [
+        "workbench.action.toggleMaximizeEditorGroup"
+      ]
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-n>": false,
+  },
+}
