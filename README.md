@@ -1,2 +1,2 @@
 # dotfiles
-this repository holds the configuration for my linux os
+A repository that holds my configuration.
