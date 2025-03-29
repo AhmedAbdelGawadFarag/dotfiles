@@ -1,3 +1,7 @@
+" disable default vim tree to avoid conflict with nvim-tree
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
+
 " map leader key to Space
 let mapleader = " "
 
@@ -9,8 +13,7 @@ call plug#begin()
 Plug 'machakann/vim-highlightedyank'
 " Commentary plugin
 Plug 'tpope/vim-commentary'
-" Nerd tree
-Plug 'preservim/nerdtree'
+
 " Surround words with " ,' ,( ,{ ,etc....
 Plug 'tpope/vim-surround'
 
@@ -35,13 +38,26 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 Plug 'tpope/vim-commentary', {'branch': 'master'}
 
-" Plug 'vim-airline/vim-airline'
-
 Plug 'rebelot/kanagawa.nvim'
 
 Plug 'wellle/targets.vim'
 
 Plug 'kshenoy/vim-signature'
+
+" HTTP Rest API
+Plug 'diepm/vim-rest-console'
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' }
+
+Plug 'simeji/winresizer'
+
+Plug 'yegappan/mru'
+
+Plug 'nvim-tree/nvim-tree.lua'
+
+Plug 'rmagatti/auto-session'
 
 call plug#end()
 
@@ -83,15 +99,11 @@ map <leader>p "0p
 noremap <leader>t :vert term<cr>
 
 
-" Nerd tree shortcuts
-" m open menu bar on the tree selection.
-" n	Create File
-" N	Create Package
-" d	Delete file or directory
-" q close the tree window.
-" p traverse to the parent of the current selection.
 " CTRL+N find current file in the tree and set focus on the tree.
-noremap <C-n> :NERDTreeFind<cr>
+noremap <C-n> :NvimTreeFindFile<cr>
+
+" leader+e open the tree explorer.
+noremap <leader>e :NvimTreeToggle<cr>
 
 " Type s + <brackets> to surround current word (word under cursor) with the desired brackets.
 nmap s ysiw
@@ -124,7 +136,14 @@ set background=dark
 colorscheme kanagawa-wave
 
 " Search in the files history list
-nnoremap <C-e> :History<CR>
+nnoremap <C-e> :Telescope oldfiles<CR>
+
+" use space+f+f to find files.
+nnoremap <leader>ff :Telescope find_files<CR>
+
+" use space+f+g to search inside the files.
+nnoremap <leader>fg :Telescope live_grep<CR>
+
 
 :tnoremap jj <C-\><C-n>
 
@@ -145,15 +164,8 @@ noremap <C-w>= <c-w>_ \| <c-w>\|
 " ctrl + w + - to zoom out current splitted window and make all window equal in size
 noremap <C-w>- <c-w>=
 
-" Make adjusing split sizes a bit more friendly
-noremap <silent> <C-Left> :vertical resize +3<CR>
-noremap <silent> <C-Right> :vertical resize -3<CR>
-noremap <silent> <C-Up> :resize +3<CR>
-noremap <silent> <C-Down> :resize -3<CR>
-
 " Quit current opened buffer 
 noremap  qw :bd<CR>
-
 
 " Going to next/prev wrapped lines with j/k
 map j gj
@@ -172,7 +184,6 @@ EOF
 set history=1000
 
 set clipboard=unnamedplus
-
 
 " alt-j to visual multi cursor with similar to (alt-j) in intelli
 " n/N to get next/previous occurrence
@@ -204,3 +215,29 @@ let g:lightline = {
 
 
 let g:lightline.enable = {'statusline': 1,'tabline': 0}
+
+set fileformats=unix,dos
+
+" HTTP REST Client
+let g:vrc_set_default_mapping = 0
+let g:vrc_response_default_content_type = 'application/json'
+let g:vrc_vrc_output_buffer_name = '_OUTPUT.json'
+let g:vrc_auto_format_response_patterns = {'json': 'jq'}
+" execute http request 
+noremap <leader>xr :call VrcQuery()<cr>
+
+" use alt + w to resize window splits.
+let g:winresizer_start_key = '<M-w>'
+
+" space + s + s to search the saved sessions.
+noremap <leader>ss :SessionSearch<CR>
+
+lua << EOF
+
+require('auto-session').setup{
+show_auto_restore_notif = true
+}
+
+require("nvim-tree").setup()
+
+EOF
