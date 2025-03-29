@@ -53,11 +53,12 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCM
 
 Plug 'simeji/winresizer'
 
+Plug 'rmagatti/auto-session'
+
 Plug 'yegappan/mru'
 
 Plug 'nvim-tree/nvim-tree.lua'
 
-Plug 'rmagatti/auto-session'
 
 call plug#end()
 
@@ -185,6 +186,7 @@ set history=1000
 
 set clipboard=unnamedplus
 
+
 " alt-j to visual multi cursor with similar to (alt-j) in intelli
 " n/N to get next/previous occurrence
 " [ to select next/previous cursor
@@ -238,6 +240,12 @@ require('auto-session').setup{
 show_auto_restore_notif = true
 }
 
-require("nvim-tree").setup()
+-- Disable showing the tree on startup to avoid conflict with auto_session
+require("nvim-tree").setup({
+	hijack_directories = {
+	  enable = false,
+	  auto_open = false,
+	}
+})
 
 EOF
