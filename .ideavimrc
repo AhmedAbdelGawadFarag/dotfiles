@@ -87,6 +87,7 @@ nmap <leader>t <Action>(ActivateTerminalToolWindow)
 " p traverse to the parent of the current selection.
 " CTRL+N find current file in the tree and set focus on the tree.
 noremap <C-n> :NERDTreeFind<cr>
+noremap <leader>e :NERDTree<cr>
 
 " Type s + <brackets> to surround current word (word under cursor) with the desired brackets.
 nmap s ysiw
@@ -114,3 +115,9 @@ set noerrorbells
 set visualbell
 
 set wrap
+
+" Resize split window size.
+nmap <C-Down> <Action>(StretchSplitToBottom)
+nmap <C-Left> <Action>(StretchSplitToLeft)
+nmap <C-Right> <Action>(StretchSplitToRight)
+nmap <C-Up> <Action>(StretchSplitToTop)
