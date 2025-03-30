@@ -228,8 +228,11 @@ let g:winresizer_start_key = '<M-w>'
 " space + s + s to search the saved sessions.
 noremap <leader>ss :SessionSearch<CR>
 
-nnoremap <leader>b[ :BufferLineMovePrev<CR>
-nnoremap <leader>b] :BufferLineMoveNext<CR>
+" move tab to the left.
+nnoremap <leader>bh :BufferLineMovePrev<CR>
+
+" move tab to the right.
+nnoremap <leader>bl :BufferLineMoveNext<CR>
 
 
 lua << EOF
@@ -251,4 +254,3 @@ require("nvim-tree").setup({
 })
 
 EOF
-
