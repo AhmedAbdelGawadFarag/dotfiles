@@ -121,3 +121,9 @@ nmap <C-Down> <Action>(StretchSplitToBottom)
 nmap <C-Left> <Action>(StretchSplitToLeft)
 nmap <C-Right> <Action>(StretchSplitToRight)
 nmap <C-Up> <Action>(StretchSplitToTop)
+
+" move tab to the right.
+nmap <leader>bl :tabm +1<cr>
+
+" move tab to the left.
+nmap <leader>bh :tabm -1<cr>
