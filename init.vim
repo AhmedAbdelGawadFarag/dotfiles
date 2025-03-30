@@ -150,9 +150,6 @@ nnoremap <leader>fg :Telescope live_grep<CR>
 
 " Bufferline extension
 set termguicolors
-lua << EOF
-require("bufferline").setup{}
-EOF
 
 "Syntax highlighting
 syntax on
@@ -178,9 +175,6 @@ set splitright
 " Open split on the below instead of default up vim behaviour
 set splitbelow
 
-lua << EOF
-require("gitsigns").setup{}
-EOF
 
 set history=1000
 
@@ -234,7 +228,15 @@ let g:winresizer_start_key = '<M-w>'
 " space + s + s to search the saved sessions.
 noremap <leader>ss :SessionSearch<CR>
 
+nnoremap <leader>b[ :BufferLineMovePrev<CR>
+nnoremap <leader>b] :BufferLineMoveNext<CR>
+
+
 lua << EOF
+
+require("bufferline").setup{}
+
+require("gitsigns").setup{}
 
 require('auto-session').setup{
 show_auto_restore_notif = true
@@ -249,3 +251,4 @@ require("nvim-tree").setup({
 })
 
 EOF
+
