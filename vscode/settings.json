@@ -4,6 +4,7 @@
   "editor.fontSize": 18,
   "editor.wordWrap": "off",
   "vim.useSystemClipboard": true,
+  "vim.leader": " ",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": [
@@ -11,11 +12,51 @@
         "="
       ],
       "commands": [
-        "workbench.action.toggleMaximizeEditorGroup"
+        "workbench.action.increaseViewSize"
       ]
-    }
+    },
+    {
+      "before": [
+        "<C-w>",
+        "-"
+      ],
+      "commands": [
+        "workbench.action.decreaseViewSize"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "f",
+        "s"
+      ],
+      "commands": [
+        "workbench.action.findInFiles"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "f",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
+    },
+    {
+      "before": [
+        "<C-e>"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
+    },
   ],
   "vim.handleKeys": {
     "<C-n>": false,
   },
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "docker.extension.enableComposeLanguageServer": false,
+  "workbench.colorTheme": "One Dark Pro Night Flat",
 }
