@@ -1,0 +1,9 @@
+vim.opt.number = true
+vim.opt.relativenumber = false
+vim.opt.ignorecase = true   -- ignore case when searching
+vim.opt.smartcase = true    -- override ignorecase if search pattern contains uppercase letters
+vim.g.mapleader = " "
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.opt.termguicolors = true
+vim.opt.clipboard = "unnamedplus"
