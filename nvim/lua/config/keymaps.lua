@@ -25,3 +25,4 @@ vim.keymap.set("", "<leader>p", [["0p]], {
 vim.keymap.set("n", "<C-_>", "gcc", { remap = true, desc = "Toggle comment line" })
 vim.keymap.set("v", "<C-_>", "gc", { remap = true, desc = "Toggle comment selection" })
 
+-- vim.keymap.set("n", "<leader>ss", "<cmd>AutoSessionSearch<CR>", { desc = "Search sessions" })
