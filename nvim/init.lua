@@ -1,6 +1,6 @@
 -- The below line set the CWD to vim argument instead of root directory
 -- Ex vim /dev/project ----> CWD will /dev/project
-vim.cmd[[autocmd VimEnter * if argc() > 0 | execute 'cd' fnameescape(fnamemodify(argv()[0], ':p:h')) | endif]]
+vim.cmd([[autocmd VimEnter * if argc() > 0 | execute 'cd' fnameescape(fnamemodify(argv()[0], ':p:h')) | endif]])
 
 require("config.keymaps")
 require("config.options")
