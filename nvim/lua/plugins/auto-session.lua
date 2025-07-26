@@ -1,7 +1,8 @@
 return {
   "rmagatti/auto-session",
   dependencies = { 
-    "ibhagwan/fzf-lua"
+    "ibhagwan/fzf-lua",
+    "nvim-lua/plenary.nvim"
  },
   config = function()
     require("auto-session").setup {
