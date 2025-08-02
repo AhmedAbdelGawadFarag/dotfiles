@@ -20,6 +20,8 @@ return {
                 "sql",
                 "json",
                 "yaml",
+                "terraform",
+                "hcl",
             },
             sync_install = false,
             auto_install = true,

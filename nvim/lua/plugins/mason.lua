@@ -19,9 +19,19 @@ return {
                     "pyright",
                     "clangd",
                     "ts_ls", -- typescript/javascript
+                    "terraformls",
+                    "jdtls",
                 },
             })
         end,
+        opts = {
+            automatic_enable = {
+                execlude = {
+                    -- this must be done through jdtls plugin.
+                    "jdtls",
+                },
+            },
+        },
     },
 
     -- 3. Formatter / tool installer
