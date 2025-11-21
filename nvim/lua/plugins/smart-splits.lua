@@ -1,5 +1,5 @@
 return {
-    "ThePrimeagen/smart-splits.nvim",
+    "mrjones2014/smart-splits.nvim",
     config = function()
         require("smart-splits").setup({
             -- optional settings
