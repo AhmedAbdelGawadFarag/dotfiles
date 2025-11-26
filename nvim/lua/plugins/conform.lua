@@ -6,6 +6,7 @@ return {
                 lua = { "stylua" },
                 javascript = { "prettier" },
                 typescript = { "prettier" },
+                json = { "prettier" },
             },
             format_on_save = {
                 lsp_fallback = true,
