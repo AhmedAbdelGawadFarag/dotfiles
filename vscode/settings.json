@@ -1,62 +1,42 @@
 {
   "workbench.iconTheme": "material-icon-theme",
-  "vim.vimrc.enable": true,
   "editor.fontSize": 18,
   "editor.wordWrap": "off",
-  "vim.useSystemClipboard": true,
-  "vim.leader": " ",
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": [
-        "<C-w>",
-        "="
-      ],
-      "commands": [
-        "workbench.action.increaseViewSize"
-      ]
-    },
-    {
-      "before": [
-        "<C-w>",
-        "-"
-      ],
-      "commands": [
-        "workbench.action.decreaseViewSize"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "f",
-        "s"
-      ],
-      "commands": [
-        "workbench.action.findInFiles"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "f",
-        "f"
-      ],
-      "commands": [
-        "workbench.action.quickOpen"
-      ]
-    },
-    {
-      "before": [
-        "<C-e>"
-      ],
-      "commands": [
-        "workbench.action.quickOpen"
-      ]
-    },
-  ],
-  "vim.handleKeys": {
-    "<C-n>": false,
+  "workbench.colorCustomizations": {
+    "list.activeSelectionForeground": "#ffffff",
+    "list.activeSelectionBackground": "#007acc",
+    "list.inactiveSelectionBackground": "#3a3d41",
+    "list.hoverBackground": "#2a2d2e",
+    "list.focusBackground": "#094771",
+    "list.dropBackground": "#383b3d",
+    "tree.indentGuidesStroke": "#585858",
+    "list.highlightForeground": "#c5c5c5",
   },
   "github.copilot.nextEditSuggestions.enabled": true,
   "docker.extension.enableComposeLanguageServer": false,
   "workbench.colorTheme": "One Dark Pro Night Flat",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.wrapTabs": true,
+  "workbench.editor.tabSizingFixedMaxWidth": 50,
+  "chat.viewSessions.orientation": "stacked",
+  "debug.breakpointsView.presentation": "tree",
+  "files.autoSave": "afterDelay",
+  "azureTerraform.survey": {
+    "surveyPromptDate": "2026-03-09T12:35:00.550Z",
+    "surveyPromptIgnoredCount": 0,
+  },
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "vscode-neovim.neovimExecutablePaths.win32": "C:\\tools\\neovim\\nvim-win64\\bin\\nvim.exe",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1,
+  },
+  "vscode-neovim.neovimInitVimPaths.win32": "C:\\Users\\z004sjvn\\AppData\\Local\\nvim\\init.lua",
 }
+
