@@ -44,4 +44,10 @@
     "command": "workbench.action.toggleSidebarVisibility",
     "when": "neovim.mode == 'normal' && editorTextFocus",
   },
+  {
+    "key": "q w",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "neovim.mode == 'normal' && editorTextFocus",
+  },
 ]
+
