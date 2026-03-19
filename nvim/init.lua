@@ -21,9 +21,15 @@ vim.cmd([[autocmd VimEnter * if argc() > 0 | execute 'cd' fnameescape(fnamemodif
 
 require("config.keymaps")
 require("config.options")
+
+if vim.g.vscode then
+    vim.api.nvim_echo({ { "Running in VSCode, loading vscode-plugins only.", "WarningMsg" } }, true, {})
+    require("lazy").setup("vscode-plugins")
+    return
+end
+
 require("config.autocmds")
 require("config.load-saved-session")
-
 vim.opt.rtp:prepend("~/.local/share/nvim/lazy/lazy.nvim")
 require("lazy").setup("plugins")
 
